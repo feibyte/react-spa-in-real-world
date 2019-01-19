@@ -8,4 +8,5 @@
 如果你发现我的实现不过如此，并且有更好的实现方式，非常欢迎 PR。
 
 ## 文档
-[开始之前](/docs/00%20-%20Before%20everything.md) 
+[开始之前](/docs/00%20-%20Before%20everything.md)  
+[设置 webpack 环境](/docs/01%20-%20Set%20up%20environment.md)
