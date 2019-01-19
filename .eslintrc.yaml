@@ -1,0 +1,14 @@
+---
+  root: true
+
+  parser: babel-eslint
+
+  extends:
+    - airbnb
+
+  env:
+    browser: true
+
+  rules:
+    # We prefer .js filename extension
+    react/jsx-filename-extension: off

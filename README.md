@@ -9,4 +9,4 @@
 
 ## 文档
 [开始之前](/docs/00%20-%20Before%20everything.md)  
-[设置 webpack 环境](/docs/01%20-%20Set%20up%20environment.md)
+[设置环境](/docs/01%20-%20Set%20up%20environment.md)
