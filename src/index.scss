@@ -1,6 +1,8 @@
 /*
  This file keep global styles such as [normalize.css](https://github.com/necolas/normalize.css)
 */
-body {
-  margin: 0;
+:global {
+  body {
+    margin: 0;
+  }
 }

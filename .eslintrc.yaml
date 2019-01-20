@@ -12,3 +12,6 @@
   rules:
     # We prefer .js filename extension
     react/jsx-filename-extension: off
+
+    # We're using modules from dev dependencies in config scripts
+    import/no-extraneous-dependencies: off
