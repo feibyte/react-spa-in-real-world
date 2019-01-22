@@ -8,6 +8,7 @@
 
   env:
     browser: true
+    jest: true
 
   rules:
     # We prefer .js filename extension

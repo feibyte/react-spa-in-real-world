@@ -44,7 +44,7 @@ env 设置 `browser: true`， 因为项目中会用到浏览器对象比如 docu
  但是个人偏好脚本和配置文件依赖的三方库只在 devDependencies 中指明。
 
 了解更多：   
-[为什么说 JSON 不是一个好的配置语言]((https://www.lucidchart.com/techblog/2018/07/16/why-json-isnt-a-good-configuration-language/)  
+[为什么说 JSON 不是一个好的配置语言](https://www.lucidchart.com/techblog/2018/07/16/why-json-isnt-a-good-configuration-language/)  
 [YAML 可能没有那么好](https://arp242.net/weblog/yaml_probably_not_so_great_after_all.html)  
 
 ## 支持 Sass 整合 postcss
@@ -57,3 +57,19 @@ sass-loader 不多说，值得注意的是： sourceMap 需要与 devtool 配合
 
 参考：
 [A tale of webpack 4](https://hackernoon.com/a-tale-of-webpack-4-and-how-to-finally-configure-it-in-the-right-way-4e94c8e7e5c1)
+
+## 单元测试
+测试的重要性不需要再强调。但是国内公司做的普遍不够好，即使是 BAT， 就我所知业务团队也很少写测试。如果一个项目需要长期维护的话，测试是必需的。如果你在面试时说你没写过测试，这恐怕有点说不过去。  
+
+个人理解，单元测试不止是保障功能，而且也可帮助发现代码中的问题。如果你的代码很难测试，就可能需要思考下是不是耦合过多。在实际场景中，假设你的页面需要的一个功能原来模块不支持需要做些改动，
+如果测试够好的话，你只需重新跑下测试就够了。发现问题，你如果怀疑是出在依赖的模块上，如果该模块有测试，你可以很快排查出问题是否出在该模块上。
+
+测试框架选择 `Jest`，配置根据[官网文档](https://jestjs.io/docs/en/webpack)就可以搞定。  
+`jest.config.js` 中需要说明的配置  
+`'\\.(scss)$': 'identity-obj-proxy'` 是因为我们启用了 `css-modules`, 为了直接使用类名，我们引入了这个包。  
+`jest.setup.js` 是 enzyme 指定的配置。
+
+常用的测试参数： 
+`npm run test -- --coverage`  
+`npm run test -- --watch`  
+第一个`--`是给 npm scripts 传入参数。
