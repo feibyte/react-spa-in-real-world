@@ -73,3 +73,14 @@ sass-loader 不多说，值得注意的是： sourceMap 需要与 devtool 配合
 `npm run test -- --coverage`  
 `npm run test -- --watch`  
 第一个`--`是给 npm scripts 传入参数。
+
+## 设置 Flow
+
+在 `.flowconfig` 中设置 `scss` 文件的解析  
+
+使用 `flow-typed` 安装类型定义
+
+`flow` 有时很坑：
+1. 即使没有安装定义，你也可以导入就像你定义了一样： `import type { AnyTypeNotExist } from 'redux';` 只不过你得到的是 any 类型。 
+2. 在类型定义中不能引用其他类型，`enzyme` 的类型定义文件中就有 `import * as React from "react";` 结果就是你可以不导入就直接使用 React 类型。当然这都是 any 类型。
+都是活生生的例子，还有 `react-redux` 也导致存在全局的 Dispatch 类型，也是 any 类型。 
