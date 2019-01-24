@@ -1,8 +1,5 @@
 module.exports = {
   rootDir: '../',
-  testPathIgnorePatterns: [
-    '<rootDir>[/\\\\](node_modules|config|dist|reports)[/\\\\]',
-  ],
   collectCoverageFrom: ['src/**/*.js'],
   coverageDirectory: '<rootDir>/reports/jest-coverage',
   setupFiles: [

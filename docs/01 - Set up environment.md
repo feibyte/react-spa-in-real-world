@@ -10,13 +10,15 @@ dist/
 public/
 scripts/
 src/
+.browserslistrc // See https://github.com/browserslist/browserslist
 .editorconfig
 .nvmrc
 babel.config.js // babel 7 推荐 babel.config.js 文件
 ```
 项目结构与 `create-react-app` 生成的模板保持一致，并且 webpack 的默认入口是 src/index.js， 默认 build 目录是 dist。这儿就不需要自己发挥聪明才智了。  
+.[browserslistrc](https://github.com/browserslist/browserslist) 这个文件在多个模块中都用到，像 @babel/preset-env autoprefixer 等  
 .editorconfig  
-.nvmrc 推荐使用 [nvm](https://github.com/creationix/nvm) 管理 Node 版本，运行 `nvm run start` 时会自动切换到指定的 Node 版本  
+.nvmrc 推荐使用 [nvm](https://github.com/creationix/nvm) 管理 Node 版本，运行 `nvm use` 时会自动切换到指定的 Node 版本  
 
 `css-loader` 并不会加载 css 到页面，`style-loader` 才负责维护一个 style 标签，在样式改变时，动态的更改页面上 style 标签内容。
 等到 `mini-css-extract-plugin` 支持 hot reload 时， `style-loader` 会被逐渐取代。
@@ -83,4 +85,5 @@ sass-loader 不多说，值得注意的是： sourceMap 需要与 devtool 配合
 `flow` 有时很坑：
 1. 即使没有安装定义，你也可以导入就像你定义了一样： `import type { AnyTypeNotExist } from 'redux';` 只不过你得到的是 any 类型。 
 2. 在类型定义中不能引用其他类型，`enzyme` 的类型定义文件中就有 `import * as React from "react";` 结果就是你可以不导入就直接使用 React 类型。当然这都是 any 类型。
-都是活生生的例子，还有 `react-redux` 也导致存在全局的 Dispatch 类型，也是 any 类型。 
+都是些活生生的例子，还有 `react-redux` 也导致污染 Dispatch 类型。   
+这些问题很难注意到，因为没有任何警告信息，给你一个自我良好的错觉。
