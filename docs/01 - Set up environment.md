@@ -79,11 +79,8 @@ sass-loader 不多说，值得注意的是： sourceMap 需要与 devtool 配合
 ## 设置 Flow
 
 在 `.flowconfig` 中设置 `scss` 文件的解析  
-
-使用 `flow-typed` 安装类型定义
-
-`flow` 有时很坑：
-1. 即使没有安装定义，你也可以导入就像你定义了一样： `import type { AnyTypeNotExist } from 'redux';` 只不过你得到的是 any 类型。 
-2. 在类型定义中不能引用其他类型，`enzyme` 的类型定义文件中就有 `import * as React from "react";` 结果就是你可以不导入就直接使用 React 类型。当然这都是 any 类型。
-都是些活生生的例子，还有 `react-redux` 也导致污染 Dispatch 类型。   
-这些问题很难注意到，因为没有任何警告信息，给你一个自我良好的错觉。
+```
+module.file_ext=.js
+module.file_ext=.scss
+module.name_mapper.extension='scss' -> 'empty/object'
+```

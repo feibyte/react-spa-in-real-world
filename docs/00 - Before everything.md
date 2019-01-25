@@ -18,7 +18,7 @@ SCSS 与 LESS 中选择 SCSS; styled-components 的话，如果是 React-Native 
 
 ## 开发方式
 
-
+最开始是直接推到 master 分支，之后每个提交会提 PR，在 PR 中注释说明。
   
 
  
